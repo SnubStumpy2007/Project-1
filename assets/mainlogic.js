@@ -8,11 +8,21 @@ const checkboxGenreStrategy = document.getElementById("genre-strategy");
 const checkboxGenreMmorpg = document.getElementById("genre-mmorpg");
 const checkboxGenreMmo = document.getElementById("genre-mmo");
 const checkboxGenreMoba = document.getElementById("genre-moba");
+// fetch button
+const fetchBtn = document.getElementById("fetch");
 
 // fetch for input
 
+let searchPlatform = [
+    checkboxPlatformWindows,
+    checkboxPlatformBrowser
+]
 
-
-
-
-// functions for fetch and output
+let searchGenre = [
+    checkboxGenreShooter,
+    checkboxGenreArpg,
+    checkboxGenreStrategy,
+    checkboxGenreMmorpg,
+    checkboxGenreMmo,
+    checkboxGenreMoba
+]
