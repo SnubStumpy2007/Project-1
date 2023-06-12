@@ -26,3 +26,7 @@ let searchGenre = [
     checkboxGenreMmo,
     checkboxGenreMoba
 ]
+
+
+//fetchBtn.addEventListener('click');
+
