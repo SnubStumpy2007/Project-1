@@ -1,7 +1,3 @@
-// if html is similiar to below
-// <input type="checkbox" id="apiKeyCheckbox">
-//<label for="apiKeyCheckbox">Use API Key</label>
-
 // Get the checkbox elements for Platform criteria
 const checkboxPlatformWindows = document.getElementById("platform-windows");
 const checkboxPlatformBrowser = document.getElementById("platform-browser");
@@ -13,16 +9,53 @@ const checkboxGenreMmorpg = document.getElementById("genre-mmorpg");
 const checkboxGenreMmo = document.getElementById("genre-mmo");
 const checkboxGenreMoba = document.getElementById("genre-moba");
 
-// Add event listener to listen for changes in checkbox state
-checkbox.addEventListener("change", function() {
-  // Get the API key value element
-  const apiKeyValue = document.getElementById("apiKeyValue");
+// fetch for input
 
-  if (this.checked) {
-    // Set the API key value to the desired key when the checkbox is checked
-    apiKeyValue.value = "YOUR_API_KEY";
-  } else {
-    // Set the API key value to an empty string when the checkbox is unchecked
-    apiKeyValue.value = "";
-  }
+let searchPlatform = [
+    checkboxPlatformWindows,
+    checkboxPlatformBrowser
+]
+
+let searchGenre = [
+    checkboxGenreShooter,
+    checkboxGenreArpg,
+    checkboxGenreStrategy,
+    checkboxGenreMmorpg,
+    checkboxGenreMmo,
+    checkboxGenreMoba
+]
+
+// fetch button with functions
+const fetchBtn = document.getElementById("fetch").addEventListener("click", function fetching(){
+    for (let i = 0; i < searchGenre.length; i++) {
+        console.log(searchPlatform[i], searchGenre[i]);
+    }
 });
+
+
+// for (let i = 1; i <= searchPlatform.length; i++){
+//     console.log(i);
+// }
+
+// for (let j = 0; j <= searchGenre.length; j++){
+//     console.log(j);
+// }
+
+// when fetch button is pressed, a function is called.  Fetch button has an event listener attached to 
+// function loops through both arrays, the stores selections into a variable
+// once selections are stored in the variable, a fetch request is made to the API we are using for this project
+// Results are displayed on the website
+
+// sources
+// https://www.slingacademy.com/article/javascript-how-to-iterate-through-2-arrays-in-parallel/
+// for (let i = 0; i < searchGenre.length; i++) {
+//     console.log(searchPlatform[i], searchGenre[i]);
+// }
+
+// then this source to loop through two arrays of differning lengths
+
+
+// unused code 
+// for (let i = 0; i < searchGenre.length; i++) {
+//     console.log(searchPlatform[i], searchGenre[i]);
+// }
