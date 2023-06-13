@@ -30,3 +30,15 @@ let searchGenre = [
 
 //fetchBtn.addEventListener('click');
 
+for (let i = 1; i <= searchPlatform.length; i++){
+    console.log(i);
+}
+
+for (let j = 0; j <= searchGenre.length; j++){
+    console.log(j);
+}
+
+// when fetch button is pressed, a function is called.  Fetch button has an event listener attached to it0
+// function loops through both arrays, the stores selections into a variable
+// once selections are stored in the variable, a fetch request is made to the API we are using for this project
+// Results are displayed on the website
