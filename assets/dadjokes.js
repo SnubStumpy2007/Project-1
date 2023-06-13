@@ -1,25 +1,17 @@
-var requestUrl = '//icanhazdadjoke.com/';
-
-var responseText = document.getElementById('response-text');
-
-function getApi(requestUrl) {
-  fetch(requestUrl)
-    .then(function (response) {
-      console.log(response);
-      return response.json();
+const getDadJoke = async function()  {
+  const dadJokeResponse = await fetch("https://icanhazdadjoke.com/", {
+      headers: {
+          Accept: "application/json"
+      }
   });
-}
+  const dadJokeJSON = await dadJokeResponse.json();
+  if (dadJokeJSON.status === 200) {
+      return dadJokeJSON.joke;
+  } else {
+      return "Unfortunately I cannot return a Dad joke at this time!"
+  }
+};
 
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+(async () => console.log(await getDadJoke()))();
 
 
-
-getApi(requestUrl);
-
-// I got it to console.log a lot of data but no joke
