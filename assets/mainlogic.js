@@ -27,9 +27,7 @@ let searchGenre = [
 
 // fetch button with functions
 const fetchBtn = document.getElementById("fetch").addEventListener("click", function fetching(){
-
-        for (let i = 0; i < searchGenre.length; i++) {
-
+    for (let i = 0; i < searchGenre.length; i++) {
         console.log(searchPlatform[i], searchGenre[i]);
     }
 });
