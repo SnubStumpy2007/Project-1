@@ -9,7 +9,7 @@ const checkboxGenreMmorpg = document.getElementById("genre-mmorpg");
 const checkboxGenreMmo = document.getElementById("genre-mmo");
 const checkboxGenreMoba = document.getElementById("genre-moba");
 // fetch button
-const fetchBtn = document.getElementById("fetch");
+const fetchBtn = document.getElementById("fetch").addEventListener("click", function(){alert("Hi, I'm ELize Lutus!")});
 
 // fetch for input
 
