@@ -35,7 +35,25 @@
     </div>
     <footer>
         <p id="dadjoke-content">Dadjoke placeholder to view font, id = dadjoke-content</p>
-    </footer>
+    <script>
+      (function () {
+        console.old = console.log;
+        var old = console.log;
+        var logger = document.getElementById('dadjoke-content');
+        console.log = function () {
+          for (var i = 0; i < arguments.length; i++) {
+            if (typeof arguments[i] == 'object') {
+                document.getElementById('dadjoke-content').innerHTML = ''
+                logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]);console.old.apply(void 0, arguments) + '<br />';
+            } else {
+                document.getElementById('dadjoke-content').innerHTML = ''
+                logger.innerHTML += arguments[i] + '<br />';
+            }
+          }
+        }
+      })();
+      </script>
+  </footer>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
     <script src="assets/dadjokes.js"></script>
