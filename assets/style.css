@@ -46,3 +46,12 @@
   header, footer, article, aside {
     padding: 1em;
   }
+
+  .checkbox {
+    display: flex;
+    padding: 3%;
+  }
+
+  #genreHeading {
+    padding-top: 3%;
+  }

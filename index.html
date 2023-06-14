@@ -16,18 +16,50 @@
     <div id="main">
       <aside>
         <p class="instructions">Please select at least one checkbox from both Platform and Genre Section</p>
-  <!-- platform checkbox elements -->
-      <h2>Platform</h2>
-        <label class="checkbox" id="platform-windows"> <input type="checkbox">PC (Windows)</label>
-        <label class="checkbox" id="platform-browser"> <input type="checkbox">Web Browser</label>
-  <!-- genre checkbox elements -->
-      <h2>Genre</h2>
-        <label class="checkbox" id="genre-shooter"> <input type="checkbox">Shooter</label>
-        <label class="checkbox" id="genre-arpg"> <input type="checkbox">ARPG</label>
-        <label class="checkbox" id="genre-strategy"> <input type="checkbox">Strategy</label>
-        <label class="checkbox" id="genre-mmorpg"> <input type="checkbox">MMORPG</label>
-        <label class="checkbox" id="genre-mmo"> <input type="checkbox">MMO</label>
-        <label class="checkbox" id="genre-moba"> <input type="checkbox">MOBA</label>
+  <!-- PLATFORM form title & checkbox elements -->
+    <section></section>        
+    <h2>Platform</h2>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="platform-windows">
+            <label class="form-check-label" for="flexCheckDefault">PC (Windows)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="platform-browser">
+            <label class="form-check-label" for="flexCheckDefault">Web Browser</label>
+          </div>
+      <!-- GENRE form title & checkbox elements -->
+          <h2 id="genreHeading">Genre</h2>
+            
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-shooter">
+            <label class="form-check-label" for="flexCheckDefault">Shooter</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-arpg">
+            <label class="form-check-label" for="flexCheckDefault">ARPG</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-strategy">
+            <label class="form-check-label" for="flexCheckDefault">Strategy</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-mmorpg">
+            <label class="form-check-label" for="flexCheckDefault">MMORPG</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-mmo">
+            <label class="form-check-label" for="flexCheckDefault">MMO</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="genre-moba">
+            <label class="form-check-label" for="flexCheckDefault">MOBA</label>
+          </div>
+        </section>  
+        <!-- Genre & Platform submit buttons   -->
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button">Clear</button>
+            <button class="btn btn-primary" type="button">Submit</button>
+          </div>
       </aside>
       <article>
         Placeholder - API response grid here with name, description, link, img
@@ -55,7 +87,7 @@
       </script>
   </footer>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="assets/dadjokes.js"></script>
     <script src="assets/mainlogic.js"></script>
 </body>
