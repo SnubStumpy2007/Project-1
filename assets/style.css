@@ -35,6 +35,9 @@
     color: blue;
     
   }
+  checkbox {
+    padding: 1px;
+  }
   footer {
     background: yellowgreen;
     height: 5em;
