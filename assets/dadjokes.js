@@ -13,5 +13,3 @@ const getDadJoke = async function()  {
 };
 
 (async () => console.log(await getDadJoke()))();
-
-
