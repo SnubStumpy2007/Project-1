@@ -10,85 +10,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet"><title>Free Online Game Generator</title>
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
+  </head>
 <body>
     <header>Free Online Game Generator</header>
     <div id="main">
       <aside>
         <p class="instructions">Please select at least one checkbox from both Platform and Genre Section</p>
-  <!-- PLATFORM form title & checkbox elements -->
+  <!-- PLATFORM form title & radio button elements -->
     <section></section>        
     <h2>Platform</h2>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="platform-windows">
-            <label class="form-check-label" for="flexRadioDefault">PC (Windows)</label>
+            <input class="form-check-input" type="radio" name="flexRadioDefault_platform" id="pcRadioBtn" checked>A
+            <label class="form-check-label" for="flexRadioDefault1">PC (Windows)</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="platform-browser">
-            <label class="form-check-label" for="flexRadioDefault">Web Browser</label>
+            <input class="form-check-input" type="radio" name="flexRadioDefault_platform" id="browserRadioBtn">
+            <label class="form-check-label" for="flexRadioDefault2">Web Browser</label>
           </div>
 
-      <!-- GENRE form title & checkbox elements -->
+      <!-- GENRE form title & radio button elements -->
           <h2 id="genreHeading">Genre</h2>
             
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-shooter">
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="shooterRadioBtn" checked>
             <label class="form-check-label" for="flexRadioDefault">Shooter</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-arpg">
-            <label class="form-check-label" for="flexRadioDefault">ARPG</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-strategy">
-            <label class="form-check-label" for="flexRadioDefault">Strategy</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-mmorpg">
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="mmorpgRadioBtn">
             <label class="form-check-label" for="flexRadioDefault">MMORPG</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-mmo">
-            <label class="form-check-label" for="flexRadioDefault">MMO</label>
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="strategyRadioBtn">
+            <label class="form-check-label" for="flexRadioDefault">Strategy</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="genre-moba">
-            <label class="form-check-label" for="flexRadioDefault">MOBA</label>
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="sportsRadioBtn">
+            <label class="form-check-label" for="flexRadioDefault">Sports</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="towerDefenseRadioBtn">
+            <label class="form-check-label" for="flexRadioDefault">Tower-Defense</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault_genre" id="actionRadioBtn">
+            <label class="form-check-label" for="flexRadioDefault">Action</label>
           </div>
         </section>  
-        <!-- Genre & Platform submit buttons   -->
+        <!-- Genre & Platform submit button   -->
            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary" type="button">Submit</button>
+            <button class="btn btn-primary" id="submitBtn" type="button">Submit</button>
           </div>
       </aside>
       <article>
+        <p id="gameprintout">print list here</p>
         Placeholder - API response grid here with name, description, link, img
       </article>
     </div>
     <footer>
         <p id="dadjoke-content">Dadjoke placeholder to view font, id = dadjoke-content</p>
-    <script>
-      (function () {
-        console.old = console.log;
-        var old = console.log;
-        var logger = document.getElementById('dadjoke-content');
-        console.log = function () {
-          for (var i = 0; i < arguments.length; i++) {
-            if (typeof arguments[i] == 'object') {
-                document.getElementById('dadjoke-content').innerHTML = ''
-                logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]);console.old.apply(void 0, arguments) + '<br />';
-            } else {
-                document.getElementById('dadjoke-content').innerHTML = ''
-                logger.innerHTML += arguments[i] + '<br />';
-            }
-          }
-        }
-      })();
-      </script>
   </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="assets/dadjokes.js"></script>
-    <script src="assets/mainlogic.js"></script>
+    <script src="./assets/dadjokes.js"></script>
+    <script src="./assets/mainlogic.js"></script>
 </body>
 </html>
