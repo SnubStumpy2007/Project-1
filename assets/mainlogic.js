@@ -9,14 +9,15 @@ const checkboxGenreMmorpg = document.getElementById("genre-mmorpg");
 const checkboxGenreMmo = document.getElementById("genre-mmo");
 const checkboxGenreMoba = document.getElementById("genre-moba");
 
+// checkbox varable
+let check = document.getElementsByTagName("Input");
+
 // fetch for input
 
-let searchPlatform = [
-    checkboxPlatformWindows,
-    checkboxPlatformBrowser
-]
 
-let searchGenre = [
+let selection = [
+    checkboxPlatformWindows,
+    checkboxPlatformBrowser,
     checkboxGenreShooter,
     checkboxGenreArpg,
     checkboxGenreStrategy,
@@ -25,23 +26,24 @@ let searchGenre = [
     checkboxGenreMoba
 ]
 
+// for (let i = 0; i < check.length; i++) {
+//     if (check[i].checked) {
+//         search.push(check[i].value);
+//     }
+// }
+
 // fetch button with functions
 const fetchBtn = document.getElementById("fetch").addEventListener("click", function fetching(){
-    for (let i = 0; i < searchGenre.length; i++) {
-        const result = searchGenre.concat(searchPlatform);
-        console.log(result);
-       // console.log(searchPlatform[i], searchGenre[i]);
+    for (let i = 0; i < check.length; i++) {
+        if (check[i].checked) {
+            selection.push(check[i].value);
+            console.log(i);
+        }
+        if (selection.length > 0) {
+            console.log("You choose: " + selection.join(","));
+        }
     }
 });
-
-
-// for (let i = 1; i <= searchPlatform.length; i++){
-//     console.log(i);
-// }
-
-// for (let j = 0; j <= searchGenre.length; j++){
-//     console.log(j);
-// }
 
 // when fetch button is pressed, a function is called.  Fetch button has an event listener attached to 
 // function loops through both arrays, the stores selections into a variable
@@ -56,8 +58,12 @@ const fetchBtn = document.getElementById("fetch").addEventListener("click", func
 
 // then this source to loop through two arrays of differning lengths
 
+// https://www.javatpoint.com/how-to-get-all-checked-checkbox-value-in-javascript
+
 
 // unused code 
 // for (let i = 0; i < searchGenre.length; i++) {
 //     console.log(searchPlatform[i], searchGenre[i]);
 // }
+
+// https://www.aspsnippets.com/Articles/Get-multiple-selected-checked-CheckBox-values-in-Array-using-JavaScript.aspx
