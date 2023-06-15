@@ -1,61 +1,84 @@
-// Get the checkbox elements for Platform criteria
-const checkboxPlatformWindows = document.getElementById("platform-windows");
-const checkboxPlatformBrowser = document.getElementById("platform-browser");
-// Get the checkbox elements for Genre criteria
-const checkboxGenreShooter = document.getElementById("genre-shooter");
-const checkboxGenreArpg = document.getElementById("genre-arpg");
-const checkboxGenreStrategy = document.getElementById("genre-strategy");
-const checkboxGenreMmorpg = document.getElementById("genre-mmorpg");
-const checkboxGenreMmo = document.getElementById("genre-mmo");
-const checkboxGenreMoba = document.getElementById("genre-moba");
-
-// fetch for input
-
-let searchPlatform = [
-    checkboxPlatformWindows,
-    checkboxPlatformBrowser
-]
-
-let searchGenre = [
-    checkboxGenreShooter,
-    checkboxGenreArpg,
-    checkboxGenreStrategy,
-    checkboxGenreMmorpg,
-    checkboxGenreMmo,
-    checkboxGenreMoba
-]
-
-// fetch button with functions
-const fetchBtn = document.getElementById("fetch").addEventListener("click", function fetching(){
-    for (let i = 0; i < searchGenre.length; i++) {
-        console.log(searchPlatform[i], searchGenre[i]);
+// Function to call the API with open parameters based on radio button logic
+function callAPI(platform, genre) {
+    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${platform}&category=${genre}';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'd518377908mshe401b1f8e3abd60p1e5d42jsncb53b176840a',
+            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+    };
+    
+    fetch(url, options)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log("API Response:", data);
+      })
+      .catch(function(error) {
+        console.error("API Error:", error);
+      }); 
     }
-});
-
-
-// for (let i = 1; i <= searchPlatform.length; i++){
-//     console.log(i);
-// }
-
-// for (let j = 0; j <= searchGenre.length; j++){
-//     console.log(j);
-// }
-
-// when fetch button is pressed, a function is called.  Fetch button has an event listener attached to 
-// function loops through both arrays, the stores selections into a variable
-// once selections are stored in the variable, a fetch request is made to the API we are using for this project
-// Results are displayed on the website
-
-// sources
-// https://www.slingacademy.com/article/javascript-how-to-iterate-through-2-arrays-in-parallel/
-// for (let i = 0; i < searchGenre.length; i++) {
-//     console.log(searchPlatform[i], searchGenre[i]);
-// }
-
-// then this source to loop through two arrays of differning lengths
-
-
-// unused code 
-// for (let i = 0; i < searchGenre.length; i++) {
-//     console.log(searchPlatform[i], searchGenre[i]);
-// }
+  
+  // html radio button elements for platform selection
+  var pcRadioBtn = document.getElementById("pcRadioBtn");
+  var browserRadioBtn = document.getElementById("browserRadioBtn");
+  
+  // html radio button elements for genre selection
+  var shooterRadioBtn = document.getElementById("shooterRadioBtn");
+  var mmorpgRadioBtn = document.getElementById("mmorpgRadioBtn");
+  var strategyRadioBtn = document.getElementById("strategyRadioBtn");
+  var sportsRadioBtn = document.getElementById("sportsRadioBtn");
+  var towerDefenseRadioBtn = document.getElementById("towerDefenseRadioBtn");
+  var actionRadioBtn = document.getElementById("actionRadioBtn");
+  
+  // Function choose which radio button is selected
+  function handleRadioButtonChange() {
+  // Get the selected platform value
+    var platform;
+    if (pcRadioBtn.checked) {
+      platform = "pc";
+    } else if (browserRadioBtn.checked) {
+      platform = "browser";
+    }
+  // Get the selected genre value to complete the category parameter
+    var genre;
+    if (shooterRadioBtn.checked) {
+        genre = "shooter";
+    } else if (mmorpgRadioBtn.checked) {
+        genre = "mmorpg";
+    } else if (strategyRadioBtn.checked) {
+        genre = "strategy";
+    } else if (sportsRadioBtn.checked) {
+        genre = "sports";
+    } else if (towerDefenseRadioBtn.checked) {
+        genre = "tower-defense";
+    } else if (actionRadioBtn.checked) {
+        genre = "action";
+    }
+    
+// function that calls API function and adds in platform and genre parameters to url
+    if (platform && genre) {
+      callAPI(platform, genre);
+    }
+  }
+  
+  // Html submit button element
+  var submitButton = document.getElementById("submitBtn");
+  
+  // Function to handle the submit button click event
+  function handleButtonClick() {
+  // Call the handleRadioButtonChange function when the submit button is clicked
+    handleRadioButtonChange();
+  }
+  
+  // "click" "event listener for the submit button
+  submitButton.addEventListener("click", handleButtonClick);
+  
+  //renders api response to html
+  function printGames() {
+    const gameList = document.getElementById("gameprintout");
+    printGames().then(function(data) {
+      gameList.textContent = data;
+    })}
