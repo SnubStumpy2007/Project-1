@@ -67,3 +67,5 @@ const fetchBtn = document.getElementById("fetch").addEventListener("click", func
 // }
 
 // https://www.aspsnippets.com/Articles/Get-multiple-selected-checked-CheckBox-values-in-Array-using-JavaScript.aspx
+
+// save for references as I'm very happy with this code.
