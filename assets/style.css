@@ -19,8 +19,6 @@
   #main > aside {
     background: gray;
     order: 1;
-  }
-  #main > aside {
     flex: 0 0 20em
   }
   header {

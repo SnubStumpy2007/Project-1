@@ -8,15 +8,18 @@ function callAPI(platform, genre) {
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
- // options needed due to CORS error; found header on API site under CORS issues   
+    
+ // options needed due to CORS error; found headers on API site under CORS issues   
     fetch(url, options)
     .then(function(response) {
       return response.json();
     })
+
  // makes empty array, sets the number of objects allowed to 3
     .then(function(data) {
       var randomGames = [];
       var numberOfObjects = 3;
+
 // loops through numberofobjects variable above and selects random index number from the "data" array created from api call
 // math random generates number from 0-1, then floor rounds to nearest whole number
 // puts the randomly generated games into new index/array     
@@ -24,12 +27,48 @@ function callAPI(platform, genre) {
         var randomIndex = Math.floor(Math.random() * data.length);
         randomGames.push(data[randomIndex]);
       }
-
-      // Use the random objects
+// logs to console to check output is correctly 3 objects
       console.log("Random Games", randomGames);
+// extracts needed KVPs and then logs to console to check output is corrrectly returning 4 KVPs from randomGames
+var extractedGameInfo = randomGames.map(function(gameInfo) {
+    return {
+      title: gameInfo.title,
+      thumbnail: gameInfo.thumbnail,
+      short_description: gameInfo.short_description,
+      game_url: gameInfo.game_url
+    };
+  });
 
-      // ... do something else with the random objects ...
-    })
+  console.log("Title, ShortDescription, URL, Thumbnail:", extractedGameInfo);
+   // Print randomGames to table
+   var tableBody = document.querySelector("table tbody");
+
+   // Clear previous table content
+   tableBody.innerHTML = "";
+ 
+   // Populate the table with randomGames data
+   extractedGameInfo.forEach(function(game) {
+     var row = document.createElement("tr");
+ 
+     var titleCell = document.createElement("td");
+     titleCell.textContent = game.title;
+     row.appendChild(titleCell);
+ 
+     var descriptionCell = document.createElement("td");
+     descriptionCell.textContent = game.short_description;
+     row.appendChild(descriptionCell);
+ 
+     var urlCell = document.createElement("td");
+     urlCell.innerHTML = `<a href="${game.game_url}" target="_blank">${game.game_url}</a>`;
+     row.appendChild(urlCell);
+ 
+     var thumbnailCell = document.createElement("td");
+     thumbnailCell.textContent = game.thumbnail;
+     row.appendChild(thumbnailCell);
+ 
+     tableBody.appendChild(row);
+   });
+})
     .catch(function(error) {
       console.error("API Error:", error);
     }); 
@@ -89,14 +128,3 @@ function callAPI(platform, genre) {
   
   // "click" "event listener for the submit button
   submitButton.addEventListener("click", handleButtonClick);
-  
-  //renders api response to html
-  function printGames() {
-    const gameList = document.getElementById("gameprintout");
-    printGames().then(function(data) {
-      gameList.textContent = data;
-    })}
-
-
-    // loop to grab data values from 4 keys, three times max than go through all array
-    // create dom element/modify - check out activity examples for serverside api - nick

@@ -49,4 +49,10 @@ SO THAT I can see the game description and link based on my criteria without sea
 
 ## Sources
 
--TBD<br/> 
+- Previous Homework assignments and modules
+- https://flexiple.com/javascript/key-value-javascript/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+- https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/#
+- https://www.w3schools.com/jsref/jsref_slice_array.asp
+- https://www.w3schools.com/js/js_random.asp
+- 
