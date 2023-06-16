@@ -1,6 +1,6 @@
 // Function to call the API with open parameters based on radio button logic
 function callAPI(platform, genre) {
-    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${platform}&category=${genre}';
+    const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${platform}&category=${genre}`;
     const options = {
         method: 'GET',
         headers: {
@@ -15,6 +15,14 @@ function callAPI(platform, genre) {
       })
       .then(function(data) {
         console.log("API Response:", data);
+        for (var i = 0; i < data.length; i++) {
+        let results = document.getElementById("gameprintout").innerHTML = data[i];
+        console.log(results);
+        
+       // results.textContent = data[i];
+       // collections.append(results);
+       // issueContainer.append(results);
+        }
       })
       .catch(function(error) {
         console.error("API Error:", error);
@@ -32,6 +40,8 @@ function callAPI(platform, genre) {
   var sportsRadioBtn = document.getElementById("sportsRadioBtn");
   var towerDefenseRadioBtn = document.getElementById("towerDefenseRadioBtn");
   var actionRadioBtn = document.getElementById("actionRadioBtn");
+
+  //var collections = document.getElementById("gameprintout")
   
   // Function choose which radio button is selected
   function handleRadioButtonChange() {
