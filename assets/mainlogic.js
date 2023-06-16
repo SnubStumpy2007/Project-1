@@ -8,7 +8,7 @@ function callAPI(platform, genre) {
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
-    
+
  // options needed due to CORS error; found headers on API site under CORS issues   
     fetch(url, options)
     .then(function(response) {
@@ -63,7 +63,9 @@ var extractedGameInfo = randomGames.map(function(gameInfo) {
      row.appendChild(urlCell);
  
      var thumbnailCell = document.createElement("td");
-     thumbnailCell.textContent = game.thumbnail;
+     var thumbnailImg = document.createElement("img");
+     thumbnailImg.src = game.thumbnail;
+     thumbnailCell.appendChild(thumbnailImg);
      row.appendChild(thumbnailCell);
  
      tableBody.appendChild(row);

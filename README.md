@@ -55,4 +55,4 @@ SO THAT I can see the game description and link based on my criteria without sea
 - https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/#
 - https://www.w3schools.com/jsref/jsref_slice_array.asp
 - https://www.w3schools.com/js/js_random.asp
-- 
+- https://marksheet.io/css-priority.html
