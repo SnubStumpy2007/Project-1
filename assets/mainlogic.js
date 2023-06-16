@@ -1,6 +1,6 @@
 // Function to call the API with open parameters based on radio button logic
 function callAPI(platform, genre) {
-    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${platform}&category=${genre}';
+    const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${platform}&category=${genre}`;
     const options = {
         method: 'GET',
         headers: {
@@ -8,17 +8,31 @@ function callAPI(platform, genre) {
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
-    
+ // options needed due to CORS error; found header on API site under CORS issues   
     fetch(url, options)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        console.log("API Response:", data);
-      })
-      .catch(function(error) {
-        console.error("API Error:", error);
-      }); 
+    .then(function(response) {
+      return response.json();
+    })
+ // makes empty array, sets the number of objects allowed to 3
+    .then(function(data) {
+      var randomGames = [];
+      var numberOfObjects = 3;
+// loops through numberofobjects variable above and selects random index number from the "data" array created from api call
+// math random generates number from 0-1, then floor rounds to nearest whole number
+// puts the randomly generated games into new index/array     
+    for (let i = 0; i < numberOfObjects; i++) {
+        var randomIndex = Math.floor(Math.random() * data.length);
+        randomGames.push(data[randomIndex]);
+      }
+
+      // Use the random objects
+      console.log("Random Games", randomGames);
+
+      // ... do something else with the random objects ...
+    })
+    .catch(function(error) {
+      console.error("API Error:", error);
+    }); 
     }
   
   // html radio button elements for platform selection
@@ -29,8 +43,8 @@ function callAPI(platform, genre) {
   var shooterRadioBtn = document.getElementById("shooterRadioBtn");
   var mmorpgRadioBtn = document.getElementById("mmorpgRadioBtn");
   var strategyRadioBtn = document.getElementById("strategyRadioBtn");
-  var sportsRadioBtn = document.getElementById("sportsRadioBtn");
-  var towerDefenseRadioBtn = document.getElementById("towerDefenseRadioBtn");
+  var sideScrollerRadioBtn = document.getElementById("sideScrollerRadioBtn");
+  var fantasyRadioBtn = document.getElementById("fantasyRadioBtn");
   var actionRadioBtn = document.getElementById("actionRadioBtn");
   
   // Function choose which radio button is selected
@@ -50,10 +64,10 @@ function callAPI(platform, genre) {
         genre = "mmorpg";
     } else if (strategyRadioBtn.checked) {
         genre = "strategy";
-    } else if (sportsRadioBtn.checked) {
-        genre = "sports";
-    } else if (towerDefenseRadioBtn.checked) {
-        genre = "tower-defense";
+    } else if (sideScrollerRadioBtn.checked) {
+        genre = "side-scroller";
+    } else if (fantasyRadioBtn.checked) {
+        genre = "fantasy";
     } else if (actionRadioBtn.checked) {
         genre = "action";
     }
@@ -82,3 +96,7 @@ function callAPI(platform, genre) {
     printGames().then(function(data) {
       gameList.textContent = data;
     })}
+
+
+    // loop to grab data values from 4 keys, three times max than go through all array
+    // create dom element/modify - check out activity examples for serverside api - nick
