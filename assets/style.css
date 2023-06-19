@@ -30,7 +30,10 @@
     font-size: 3vw;
   }
   p.instructions{
+    padding-top: 10px;
     color: blue;
+    text-justify: center;
+    font-family: Arial, Helvetica, sans-serif;
     
   }
   checkbox {
