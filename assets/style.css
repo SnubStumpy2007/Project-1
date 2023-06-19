@@ -19,8 +19,6 @@
   #main > aside {
     background: gray;
     order: 1;
-  }
-  #main > aside {
     flex: 0 0 20em
   }
   header {
@@ -32,7 +30,10 @@
     font-size: 3vw;
   }
   p.instructions{
+    padding-top: 10px;
     color: blue;
+    text-justify: center;
+    font-family: Arial, Helvetica, sans-serif;
     
   }
   checkbox {

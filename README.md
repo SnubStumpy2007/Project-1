@@ -49,4 +49,15 @@ SO THAT I can see the game description and link based on my criteria without sea
 
 ## Sources
 
--TBD<br/> 
+- Previous Homework assignments and modules
+- https://flexiple.com/javascript/key-value-javascript/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+- https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/#
+- https://www.w3schools.com/jsref/jsref_slice_array.asp
+- https://www.w3schools.com/js/js_random.asp
+- https://marksheet.io/css-priority.html
+- https://stackoverflow.com/questions/75342647/how-can-i-get-my-images-to-show-up-on-the-main-display-of-the-page
+- https://www.w3schools.com/jsref/prop_script_src.asp
+- https://www.w3schools.com/jsref/prop_img_src.asp
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- https://www.w3schools.com/js/js_string_templates.asp
